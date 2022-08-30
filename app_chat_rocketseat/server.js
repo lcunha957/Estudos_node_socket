@@ -26,7 +26,7 @@ console.log(data);
 // faz o papel do banco de dados
 messages.push(data);
 // envia pra todos os sockets conectados na aplicação
-socket.broadcast.emit('receiverMessage', data);
+socket.broadcast.emit('receivedMessage', data);
  });
 });
 server.listen(3000);
