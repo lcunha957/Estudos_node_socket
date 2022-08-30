@@ -27,7 +27,7 @@ function renderMessage(message) {
 $('.messages').append('<div class = "message"><strong>'+ message.author +' </strong>:'+ message.message + '</div>')
 }
 
-socket.on('previousMessages', function(messages){
+socket.on('previousMessages', function(message){
   for (messages of messages) {
     renderMessage(message);
   }
@@ -37,7 +37,7 @@ renderMessage(message);
 });
 
 $('#chat').submit(function(event){
-    event.preventDefault();
+    event.preventDefault()
 
     var author = $('input[name=username]').val();
     var message = $('input[name=message]').val();
