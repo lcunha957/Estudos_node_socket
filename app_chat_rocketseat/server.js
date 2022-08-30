@@ -21,6 +21,9 @@ let messages = [];
 io.on('connection', socket =>{
  console.log(`Socket conectado: ${socket.id}`);
  
+ // Mandando todo o historico de messagens assim que abrir a aplicação
+socket.emit('previousMessages', messages);
+
  socket.on('sendMessage', data =>{
 console.log(data);
 // faz o papel do banco de dados
