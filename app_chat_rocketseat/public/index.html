@@ -28,7 +28,7 @@ $('.messages').append('<div class = "message"><strong>'+ message.author +' </str
 }
 
 socket.on('previousMessages', function(message){
-  for (messages of messages) {
+  for (message of messages) {
     renderMessage(message);
   }
 });
