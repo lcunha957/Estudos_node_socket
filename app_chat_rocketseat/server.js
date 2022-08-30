@@ -1,6 +1,7 @@
 const express = require('express');
 const { ServerResponse } = require('http');
 const path = require('path');
+const { Socket } = require('socket.io');
 
 const app = express();
 const server = require('http').createServer(app);
@@ -15,8 +16,7 @@ app.use('/',(req,res) => {
     res.render('index.html');
 });
 
-io.on('connection', socket =>{
-    console.log('Socket conectado: ${socket.id}');
-}) 
-
+io.on('connection', Socket =>{
+ console.log(`Socket conectado: ${socket.id}`);  
+});
 server.listen(3000);
